@@ -1,0 +1,226 @@
+
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MHP - Smaug Studio: طراحی بازی و پروژه‌های نوآورانه">
+    <title>MHP - Smaug Studio</title>
+    <style>
+        body {
+            background-color: #0a0a0a; 
+            color: #d4af37; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column; 
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh; 
+            margin: 0;
+            overflow-x: hidden; 
+        }
+
+        /* کانتینر اصلی با حاشیه طلایی جادویی */
+        .gold-border-container {
+            position: relative;
+            padding: 8px; 
+            background: linear-gradient(90deg, #d4af37, #fcf6ba, #d4af37);
+            background-size: 400% 400%;
+            border-radius: 25px; 
+            animation: goldFlow 5s ease infinite;
+            box-shadow: 0 0 40px rgba(212, 175, 55, 0.4);
+            margin: 40px 20px; 
+            width: 90%; 
+            max-width: 900px; 
+            display: flex; 
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            flex-grow: 1; 
+        }
+
+        .content-box {
+            background-color: #1a1a1a; 
+            padding: 40px;
+            border-radius: 18px; 
+            text-align: center;
+            width: 100%;
+            box-sizing: border-box; 
+        }
+
+        h1 {
+            font-size: 3.5rem; 
+            margin: 0;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shine 3s linear infinite;
+        }
+
+        .studio-name {
+            display: block;
+            font-size: 1.3rem;
+            color: #bbb; 
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        .tagline {
+            color: #d4af37;
+            margin-top: 25px;
+            font-size: 1.1rem;
+            font-style: italic;
+        }
+
+        .section-title {
+            color: #fcf6ba; 
+            font-size: 2.2rem;
+            margin-top: 50px;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after { 
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: -10px;
+            width: 0;
+            height: 3px;
+            background: #d4af37;
+            animation: underlineGrowth 2s ease-out forwards;
+            animation-delay: 1s; 
+        }
+
+        .section-content {
+            color: #aaa;
+            font-size: 1.05rem;
+            line-height: 1.8;
+            max-width: 700px;
+            margin: 0 auto 40px auto;
+            text-align: justify; 
+            padding: 0 15px;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+            width: 100%;
+        }
+
+        .project-item {
+            background-color: #222;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            border: 1px solid #333;
+        }
+
+        .project-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.5), 0 0 20px rgba(212, 175, 55, 0.2);
+            border-color: #d4af37;
+        }
+
+        .project-item h3 {
+            color: #fcf6ba;
+            font-size: 1.6rem;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        /* انیمیشن متن در حال ساخت */
+        .status-loading {
+            color: #888;
+            font-size: 1rem;
+            font-style: italic;
+            animation: pulseText 1.5s infinite ease-in-out;
+        }
+
+        footer {
+            margin-top: auto; 
+            padding: 20px;
+            color: #666;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        /* انیمیشن‌ها */
+        @keyframes goldFlow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes shine {
+            to { background-position: 200% center; }
+        }
+
+        .fade-in {
+            animation: reveal 2.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        @keyframes reveal {
+            from { opacity: 0; transform: scale(0.9); filter: blur(10px); }
+            to { opacity: 1; transform: scale(1); filter: blur(0); }
+        }
+
+        @keyframes underlineGrowth {
+            to { width: 60%; } 
+        }
+
+        @keyframes pulseText {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="gold-border-container fade-in">
+        <div class="content-box">
+            <span class="studio-name">SMAUG STUDIO PRESENTS</span>
+            <h1>MHP</h1>
+            <p class="tagline">خوش آمدید به قلمرو طراحی و نوآوری</p>
+
+            <section>
+                <h2 class="section-title">طراحی بازی</h2>
+                <p class="section-content">
+                    در بخش طراحی بازی، ما رویاها را به واقعیت تبدیل می‌کنیم. از ایده‌پردازی اولیه و داستان‌نویسی گرفته تا طراحی کاراکترها و جهان بازی، تیمی متخصص از طراحان و هنرمندان در کنار هم کار می‌کنند تا تجربه‌های فراموش‌نشدنی را برای گیمرها خلق کنند.
+                </p>
+            </section>
+
+            <section>
+                <h2 class="section-title">پروژه‌ها</h2>
+                <div class="project-grid">
+                    <div class="project-item">
+                        <h3>پروژه اول</h3>
+                        <p class="status-loading">در حال ساخت...</p>
+                    </div>
+                    <div class="project-item">
+                        <h3>پروژه دوم</h3>
+                        <p class="status-loading">در حال ساخت...</p>
+                    </div>
+                    <div class="project-item">
+                        <h3>پروژه سوم</h3>
+                        <p class="status-loading">در حال ساخت...</p>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+    <footer>
+        SMAUG STUDIO 2024 ©
+    </footer>
+
+</body>
+</html>
